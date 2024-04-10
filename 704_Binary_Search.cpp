@@ -6,13 +6,14 @@ public:
     int search(std::vector<int>& nums, int target) {
         int left = 0;
         int right = nums.size() - 1;
-        int middle;
+        int middle, num;
         while(left <= right){
             middle = left + ((right - left) >> 1);
-            if(nums[middle] > target){
+            num = nums[middle];
+            if(num > target){
                 right = middle - 1;
             }
-            else if(nums[middle] < target){
+            else if(num < target){
                 left = middle + 1;
             }
             else{
