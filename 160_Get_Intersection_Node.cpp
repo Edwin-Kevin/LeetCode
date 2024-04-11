@@ -41,3 +41,19 @@ public:
         return NULL;
     }
 };
+
+// 两段链表拼起来，两个指针分别走
+class Solution2 {
+public:
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+        ListNode* curA = headA;
+        ListNode* curB = headB;
+        while(curA != curB){
+            if(curA != NULL) curA = curA->next;
+            else curA = headB;
+            if(curB != NULL) curB = curB->next;
+            else curB = headA;
+        }
+        return curA;
+    }
+};
