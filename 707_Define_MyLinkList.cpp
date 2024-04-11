@@ -1,3 +1,4 @@
+#include <algorithm>
 class MyLinkedList {
 public:
     struct ListNode{
@@ -42,7 +43,7 @@ public:
     
     void addAtIndex(int index, int val) {
         if(index > size) return;
-        index = max(0, index);
+        index = std::max(0, index);
         ListNode* newListNode = new ListNode(val);
         ListNode* cur = dummyHead;
         while(index > 0){
